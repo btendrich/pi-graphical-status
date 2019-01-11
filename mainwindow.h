@@ -9,6 +9,7 @@
 #include <QRegularExpression>
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
+#include <QNetworkInterface>
 
 namespace Ui {
 class MainWindow;

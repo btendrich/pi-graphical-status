@@ -24,6 +24,27 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(&eth0Process, SIGNAL(readyReadStandardOutput()), this, SLOT(readEth0Output()));
     connect(&wlan0Process, SIGNAL(readyReadStandardOutput()), this, SLOT(readWlan0Output()));
     connect(&wProcess, SIGNAL(readyReadStandardOutput()), this, SLOT(readWOutput()));
+
+
+// get the hardware address
+    QNetworkInterface interface = QNetworkInterface::interfaceFromName("en0");
+    ui->hwaddr_label->setText(interface.hardwareAddress());
+
+//    QList<QNetworkAddressEntry> addresses = interface.addressEntries();
+
+    QStringList addresses;
+    foreach(QNetworkAddressEntry address, interface.addressEntries())
+    {
+        addresses << address.ip().toString();
+    }
+
+    ui->ip_label->setText( addresses.join(", "));
+
+    foreach(QNetworkInterface netInterface, QNetworkInterface::allInterfaces())
+    {
+        // Return only the first non-loopback MAC Address
+        qDebug() << "Got interface " << netInterface.name() << " with hwaddr " << netInterface.hardwareAddress() << "...";
+    }
 }
 
 MainWindow::~MainWindow()

@@ -152,9 +152,7 @@
       <bool>true</bool>
      </property>
      <property name="plainText">
-      <string>synchronised to NTP server (216.218.254.202) at stratum 3 
-   time correct to within 94 ms
-   polling server every 1024 s</string>
+      <string/>
      </property>
     </widget>
     <widget class="QPlainTextEdit" name="plainTextEdit_6">
@@ -178,9 +176,7 @@
       <bool>true</bool>
      </property>
      <property name="plainText">
-      <string>synchronised to NTP server (216.218.254.202) at stratum 3 
-   time correct to within 94 ms
-   polling server every 1024 s</string>
+      <string/>
      </property>
     </widget>
    </widget>
