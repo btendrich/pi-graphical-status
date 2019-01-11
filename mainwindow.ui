@@ -125,9 +125,9 @@
      <property name="geometry">
       <rect>
        <x>640</x>
-       <y>360</y>
+       <y>438</y>
        <width>639</width>
-       <height>179</height>
+       <height>101</height>
       </rect>
      </property>
      <property name="font">
@@ -145,6 +145,58 @@
       <string> 09:13:49 up 1 day, 19:11,  1 user,  load average: 0.96, 0.92, 0.92
 USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 pi       pts/0    10.102.96.26     08:51    0.00s  0.22s  0.01s w</string>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="plainTextEdit_5">
+     <property name="geometry">
+      <rect>
+       <x>1</x>
+       <y>337</y>
+       <width>639</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-width: 1px; border-color: #ffffff; border-style: solid;</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string>synchronised to NTP server (216.218.254.202) at stratum 3 
+   time correct to within 94 ms
+   polling server every 1024 s</string>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="plainTextEdit_6">
+     <property name="geometry">
+      <rect>
+       <x>640</x>
+       <y>337</y>
+       <width>639</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-width: 1px; border-color: #ffffff; border-style: solid;</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string>synchronised to NTP server (216.218.254.202) at stratum 3 
+   time correct to within 94 ms
+   polling server every 1024 s</string>
      </property>
     </widget>
    </widget>
@@ -179,13 +231,13 @@ pi       pts/0    10.102.96.26     08:51    0.00s  0.22s  0.01s w</string>
       <x>1</x>
       <y>120</y>
       <width>1278</width>
-      <height>119</height>
+      <height>60</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>.SF Compact Display</family>
-      <pointsize>40</pointsize>
+      <pointsize>36</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -202,15 +254,15 @@ pi       pts/0    10.102.96.26     08:51    0.00s  0.22s  0.01s w</string>
     <property name="geometry">
      <rect>
       <x>1</x>
-      <y>239</y>
+      <y>180</y>
       <width>1278</width>
-      <height>119</height>
+      <height>60</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>.SF Compact Display</family>
-      <pointsize>40</pointsize>
+      <pointsize>36</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -218,6 +270,31 @@ pi       pts/0    10.102.96.26     08:51    0.00s  0.22s  0.01s w</string>
     </property>
     <property name="text">
      <string>b8:27:eb:03:6d:b9</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>240</y>
+      <width>1278</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>.SF Compact Display</family>
+      <pointsize>36</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style: solid; border-color #ffffff;</string>
+    </property>
+    <property name="text">
+     <string>Internet OK</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
