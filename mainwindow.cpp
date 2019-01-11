@@ -13,10 +13,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ntpProcess.setProgram("/usr/bin/ntpstat");
 
     eth0Process.setProgram("/sbin/ifconfig");
-    eth0Process.setArguments(QStringList("en0"));
+    eth0Process.setArguments(QStringList("eth0"));
 
     wlan0Process.setProgram("/sbin/ifconfig");
-    wlan0Process.setArguments(QStringList("en1"));
+    wlan0Process.setArguments(QStringList("wlan0"));
 
     wProcess.setProgram("/usr/bin/w");
 
