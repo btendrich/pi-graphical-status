@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 // get the hardware address
-    QNetworkInterface interface = QNetworkInterface::interfaceFromName("en0");
+    QNetworkInterface interface = QNetworkInterface::interfaceFromName("eth0");
     ui->hwaddr_label->setText(interface.hardwareAddress());
 
 //    QList<QNetworkAddressEntry> addresses = interface.addressEntries();
