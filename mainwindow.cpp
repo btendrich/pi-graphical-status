@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     updateTimer = new QTimer(this);
     connect(updateTimer, SIGNAL( timeout()), this, SLOT(updateTimerTimeout()));
-    updateTimer->start(1000);
+    updateTimer->start(5000);
 
     ntpProcess.setProgram("/usr/bin/ntpstat");
 
@@ -57,6 +57,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(manager, &QNetworkAccessManager::finished,
         this, [=](QNetworkReply *reply) {
             if (reply->error()) {
+                ui->internet_label->setStyleSheet("border-style: solid; border-color #ffffff; color: #ff0000;");
                 ui->internet_label->setText( reply->errorString() );
                 return;
             }
@@ -72,6 +73,8 @@ MainWindow::MainWindow(QWidget *parent) :
             }
         }
     );
+
+    updateTimerTimeout();
 }
 
 MainWindow::~MainWindow()
@@ -93,6 +96,7 @@ void MainWindow::updateTimerTimeout()
     wProcess.kill();
     wProcess.start();
 
+    ui->internet_label->setText("");
     request.setUrl(QUrl("http://captive.apple.com/hotspot-detect.html"));
     manager->get(request);
 }
