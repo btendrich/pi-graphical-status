@@ -35,7 +35,7 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPlainTextEdit" name="plainTextEdit">
+    <widget class="QPlainTextEdit" name="eth0_textedit">
      <property name="geometry">
       <rect>
        <x>1</x>
@@ -56,17 +56,10 @@
       <bool>true</bool>
      </property>
      <property name="plainText">
-      <string>eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
-        inet 10.102.128.74  netmask 255.255.252.0  broadcast 10.102.131.255
-        inet6 fe80::5d8c:d8b2:22a9:259d  prefixlen 64  scopeid 0x20&lt;link&gt;
-        ether b8:27:eb:03:6d:b9  txqueuelen 1000  (Ethernet)
-        RX packets 312169  bytes 27318310 (26.0 MiB)
-        RX errors 0  dropped 75  overruns 0  frame 0
-        TX packets 17653  bytes 1307774 (1.2 MiB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</string>
+      <string>eth0</string>
      </property>
     </widget>
-    <widget class="QPlainTextEdit" name="plainTextEdit_2">
+    <widget class="QPlainTextEdit" name="wlan0_textedit">
      <property name="geometry">
       <rect>
        <x>640</x>
@@ -87,15 +80,10 @@
       <bool>true</bool>
      </property>
      <property name="plainText">
-      <string>wlan0: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
-        ether b8:27:eb:56:38:ec  txqueuelen 1000  (Ethernet)
-        RX packets 0  bytes 0 (0.0 B)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 0  bytes 0 (0.0 B)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</string>
+      <string>wlan0</string>
      </property>
     </widget>
-    <widget class="QPlainTextEdit" name="plainTextEdit_3">
+    <widget class="QPlainTextEdit" name="ntpstat_textedit">
      <property name="geometry">
       <rect>
        <x>1</x>
@@ -116,12 +104,10 @@
       <bool>true</bool>
      </property>
      <property name="plainText">
-      <string>synchronised to NTP server (216.218.254.202) at stratum 3 
-   time correct to within 94 ms
-   polling server every 1024 s</string>
+      <string>ntpstat</string>
      </property>
     </widget>
-    <widget class="QPlainTextEdit" name="plainTextEdit_4">
+    <widget class="QPlainTextEdit" name="uptime_textedit">
      <property name="geometry">
       <rect>
        <x>640</x>
@@ -142,9 +128,7 @@
       <bool>true</bool>
      </property>
      <property name="plainText">
-      <string> 09:13:49 up 1 day, 19:11,  1 user,  load average: 0.96, 0.92, 0.92
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-pi       pts/0    10.102.96.26     08:51    0.00s  0.22s  0.01s w</string>
+      <string>w</string>
      </property>
     </widget>
     <widget class="QPlainTextEdit" name="plainTextEdit_5">
@@ -200,7 +184,7 @@ pi       pts/0    10.102.96.26     08:51    0.00s  0.22s  0.01s w</string>
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="status_label">
     <property name="geometry">
      <rect>
       <x>1</x>
@@ -219,13 +203,13 @@ pi       pts/0    10.102.96.26     08:51    0.00s  0.22s  0.01s w</string>
      <string notr="true">border-style: solid; border-color #ffffff;</string>
     </property>
     <property name="text">
-     <string>Status 'clock-timer-036db9':</string>
+     <string>status</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="ip_label">
     <property name="geometry">
      <rect>
       <x>1</x>
@@ -244,13 +228,13 @@ pi       pts/0    10.102.96.26     08:51    0.00s  0.22s  0.01s w</string>
      <string notr="true">border-style: solid; border-color #ffffff;</string>
     </property>
     <property name="text">
-     <string>10.102.128.74</string>
+     <string>ip</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="hwaddr_label">
     <property name="geometry">
      <rect>
       <x>1</x>
@@ -269,13 +253,13 @@ pi       pts/0    10.102.96.26     08:51    0.00s  0.22s  0.01s w</string>
      <string notr="true">border-style: solid; border-color #ffffff;</string>
     </property>
     <property name="text">
-     <string>b8:27:eb:03:6d:b9</string>
+     <string>hwaddr</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="internet_label">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -294,7 +278,7 @@ pi       pts/0    10.102.96.26     08:51    0.00s  0.22s  0.01s w</string>
      <string notr="true">border-style: solid; border-color #ffffff;</string>
     </property>
     <property name="text">
-     <string>Internet OK</string>
+     <string>internet</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
