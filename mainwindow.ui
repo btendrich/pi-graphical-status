@@ -44,6 +44,11 @@
        <height>179</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">border-width: 1px; border-color: #ffffff; border-style: solid;</string>
      </property>
@@ -70,6 +75,11 @@
        <height>179</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">border-width: 1px; border-color: #ffffff; border-style: solid;</string>
      </property>
@@ -89,10 +99,15 @@
      <property name="geometry">
       <rect>
        <x>1</x>
-       <y>360</y>
+       <y>438</y>
        <width>639</width>
-       <height>179</height>
+       <height>101</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">border-width: 1px; border-color: #ffffff; border-style: solid;</string>
@@ -114,6 +129,11 @@
        <width>639</width>
        <height>179</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">border-width: 1px; border-color: #ffffff; border-style: solid;</string>
@@ -140,7 +160,7 @@ pi       pts/0    10.102.96.26     08:51    0.00s  0.22s  0.01s w</string>
     <property name="font">
      <font>
       <family>.SF Compact Display</family>
-      <pointsize>64</pointsize>
+      <pointsize>60</pointsize>
      </font>
     </property>
     <property name="styleSheet">
