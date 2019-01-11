@@ -258,7 +258,7 @@
    <widget class="QLabel" name="internet_label">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>1</x>
       <y>240</y>
       <width>1278</width>
       <height>60</height>

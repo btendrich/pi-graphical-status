@@ -30,12 +30,13 @@ MainWindow::MainWindow(QWidget *parent) :
     QNetworkInterface interface = QNetworkInterface::interfaceFromName("eth0");
     ui->hwaddr_label->setText(interface.hardwareAddress());
 
-//    QList<QNetworkAddressEntry> addresses = interface.addressEntries();
 
+    // list all ipv4 addresses
     QStringList addresses;
     foreach(QNetworkAddressEntry address, interface.addressEntries())
     {
-        addresses << address.ip().toString();
+        if( address.ip().protocol() == QAbstractSocket::IPv4Protocol)
+            addresses << address.ip().toString();
     }
 
     ui->ip_label->setText( addresses.join(", "));
@@ -45,6 +46,32 @@ MainWindow::MainWindow(QWidget *parent) :
         // Return only the first non-loopback MAC Address
         qDebug() << "Got interface " << netInterface.name() << " with hwaddr " << netInterface.hardwareAddress() << "...";
     }
+
+
+    // get the local hostname
+    ui->status_label->setText( QString("Status '%1':").arg(QHostInfo::localHostName()) );
+
+
+    // setup the internet access test
+    manager = new QNetworkAccessManager();
+    QObject::connect(manager, &QNetworkAccessManager::finished,
+        this, [=](QNetworkReply *reply) {
+            if (reply->error()) {
+                ui->internet_label->setText( reply->errorString() );
+                return;
+            }
+
+            QString answer = reply->readAll();
+
+            if( answer.contains("<HTML><HEAD><TITLE>Success</TITLE></HEAD><BODY>Success</BODY></HTML>") ) {
+                ui->internet_label->setStyleSheet("border-style: solid; border-color #ffffff; color: #00ff00;");
+                ui->internet_label->setText("Internet Access OK");
+            } else {
+                ui->internet_label->setStyleSheet("border-style: solid; border-color #ffffff; color: #ff0000;");
+                ui->internet_label->setText("No Internet Access");
+            }
+        }
+    );
 }
 
 MainWindow::~MainWindow()
@@ -65,6 +92,9 @@ void MainWindow::updateTimerTimeout()
 
     wProcess.kill();
     wProcess.start();
+
+    request.setUrl(QUrl("http://captive.apple.com/hotspot-detect.html"));
+    manager->get(request);
 }
 
 void MainWindow::readNtpOutput()

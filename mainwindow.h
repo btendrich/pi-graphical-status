@@ -10,6 +10,8 @@
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QNetworkInterface>
+#include <QHostInfo>
+#include <QNetworkReply>
 
 namespace Ui {
 class MainWindow;
@@ -33,10 +35,14 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QTimer *updateTimer;
+
     QProcess ntpProcess;
     QProcess eth0Process;
     QProcess wlan0Process;
     QProcess wProcess;
+
+    QNetworkAccessManager *manager;
+    QNetworkRequest request;
 };
 
 #endif // MAINWINDOW_H
